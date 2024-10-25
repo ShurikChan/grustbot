@@ -66,7 +66,7 @@ def text_message(message):
         bot.send_message(message.chat.id, f"Ошибка: неверный Steam id")
 
 
-@bot.message_handler(new_chat_members=['BubueBot'])
+@bot.message_handler(commands=['start'])
 def welcome_message(message):
     welcome_text = "Привет! Отправь мне стим айди в любом формате или кастомный название профиля получи информацию о профиле в граст."
     bot.send_message(message.chat.id, welcome_text)

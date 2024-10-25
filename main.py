@@ -7,6 +7,12 @@ from datetime import datetime
 TOKEN = '7737186245:AAHz3qVUNim8TuPiRD-Zvl-R5eIwxAbo1qU'
 bot = telebot.TeleBot(TOKEN)
 
+@bot.message_handler(commands=['start'])
+def send_welcome(message):
+    chat_id = message.chat.id
+    bot.send_message(chat_id,
+                     "Привет! Отправь мне стим айди в любом формате и получи информацию о профиле в grust.")
+    
 
 def get_steamid(profileurl: str):
     url = f'https://findsteamid.com/steamid/{profileurl}'
@@ -66,12 +72,6 @@ def text_message(message):
         bot.send_message(message.chat.id, f"Ошибка: неверный Steam id")
 
 
-@bot.message_handler(commands=['start'])
-def send_welcome(message):
-    chat_id = message.chat.id
-    bot.send_message(chat_id,
-                     "Привет! Отправь мне стим айди в любом формате и получи информацию о профиле в grust.",
-                     reply_markup=markup)
 
 
 if __name__ == '__main__':

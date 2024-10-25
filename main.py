@@ -4,7 +4,7 @@ import telebot
 import json
 from datetime import datetime
 
-TOKEN = '6965433386:AAGfyNWNSjSyPo0pIsd-oenQHFgt_nWourE'
+TOKEN = '7737186245:AAHz3qVUNim8TuPiRD-Zvl-R5eIwxAbo1qU'
 bot = telebot.TeleBot(TOKEN)
 
 

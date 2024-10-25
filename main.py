@@ -67,9 +67,11 @@ def text_message(message):
 
 
 @bot.message_handler(commands=['start'])
-def welcome_message(message):
-    welcome_text = "Привет! Отправь мне стим айди в любом формате или кастомный название профиля получи информацию о профиле в граст."
-    bot.send_message(message.chat.id, welcome_text)
+def send_welcome(message):
+    chat_id = message.chat.id
+    bot.send_message(chat_id,
+                     "Привет! Отправь мне стим айди в любом формате и получи информацию о профиле в grust.",
+                     reply_markup=markup)
 
 
 if __name__ == '__main__':
